@@ -3,30 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-
-interface Product {
-  id: string
-  name: string
-  article: string | null
-  base_price: number
-  wholesale_price: number | null
-  color: string | null
-  is_available: boolean
-  stock_count: number
-  vendor_model: string | null
-  specs: Record<string, any> | null
-  dims: Record<string, any> | null
-  images: Array<{ url: string }> | null
-  category: {
-    id: string
-    name: string
-  } | null
-  price_list_entries?: Array<{
-    stock_pack_qty: number | null
-    boxes_qty: number | null
-    price: number
-  }>
-}
+import type { Product } from '@/lib/types'
 
 interface ProductCardProps {
   id?: string
@@ -47,7 +24,7 @@ export default function ProductCard({ id, name, price, image, product }: Product
 
   const categoryType = getCategoryType()
   const displayName = product?.name || name || 'Товар'
-  const displayPrice = product?.base_price || price || 0
+  const displayPrice = product?.base_price || price || product?.price_list_entries?.[0]?.price || 0
   const displayImage = product?.images?.[0]?.url || image
   const displayArticle = product?.article || id || 'N/A'
 
@@ -56,7 +33,6 @@ export default function ProductCard({ id, name, price, image, product }: Product
       className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100/50 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-500 group relative flex flex-col w-full"
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.3 }}
-      style={{ aspectRatio: '3/4' }}
     >
       <Link href={`/products/${product?.id || id || '1'}`} className="flex flex-col h-full w-full">
         <div className="relative w-full bg-gray-100 overflow-hidden flex-shrink-0" style={{ aspectRatio: '16/9' }}>
@@ -80,8 +56,8 @@ export default function ProductCard({ id, name, price, image, product }: Product
             </div>
           )}
         </div>
-        <div className="p-8 flex flex-col flex-grow">
-          <h3 className="font-serif text-2xl font-bold mb-3 text-text-primary">
+        <div className="p-6 flex flex-col flex-grow">
+          <h3 className="font-serif text-2xl font-bold mb-3 text-text-primary leading-tight line-clamp-2">
             {displayName}
           </h3>
           

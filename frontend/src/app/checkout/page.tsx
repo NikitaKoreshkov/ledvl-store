@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import api from '@/lib/api'
 import { useCart } from '@/store/cart'
@@ -50,10 +51,13 @@ export default function CheckoutPage() {
   if (orderId) {
     return (
       <div className="pt-24 pb-20 min-h-screen bg-background-main">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6">Заказ принят</h1>
-          <p className="mb-2">Номер заказа: <span className="font-mono">{orderId}</span></p>
-          <p>Мы свяжемся с вами по указанному телефону.</p>
+        <div className="container mx-auto px-4">
+          <div className="card max-w-2xl mx-auto p-10 text-center">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-text-primary">Заказ принят</h1>
+            <p className="text-text-primary mb-2">Номер заказа: <span className="font-mono font-semibold">{orderId}</span></p>
+            <p className="text-text-muted">Мы свяжемся с вами по указанному телефону.</p>
+            <Link href="/catalog" className="btn-primary inline-block mt-8">Вернуться в каталог</Link>
+          </div>
         </div>
       </div>
     )
