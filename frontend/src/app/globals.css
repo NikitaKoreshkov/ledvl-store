@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background-main text-text-primary;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    line-height: 1.4;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-md;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  }
+
+  .card {
+    @apply bg-surface-solid rounded-lg shadow-sm transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:scale-[1.02] hover:shadow-lg;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-accent-soft text-white rounded-lg font-medium transition-all duration-300 hover:bg-accent-soft-alt hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-accent-dark text-white rounded-lg font-medium transition-all duration-300 hover:bg-opacity-90;
+  }
+
+  .slider-thumb::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .slider-thumb::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
