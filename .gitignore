@@ -35,3 +35,7 @@ minio_data/
 # OS
 Thumbs.db
 
+
+# Next.js and Vercel CLI
+next-env.d.ts
+.vercel/
