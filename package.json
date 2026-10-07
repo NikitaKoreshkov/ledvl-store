@@ -1,0 +1,30 @@
+{
+  "name": "led-vl",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "node scripts/check-docker.js && npm run docker:up && npm run wait:db && npm run create:db && concurrently --names \"FRONTEND,BACKEND\" --prefix-colors \"blue,green\" \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run start:dev",
+    "docker:up": "docker-compose up -d || docker compose up -d",
+    "docker:down": "docker-compose down",
+    "wait:db": "node scripts/wait-for-db.js",
+    "create:db": "node scripts/create-db.js",
+    "add-test-products": "bash scripts/add-test-products.sh",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+
