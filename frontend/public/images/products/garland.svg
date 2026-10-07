@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<defs>
+<linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#15161a"/><stop offset="1" stop-color="#0c0d10"/>
+</linearGradient>
+<radialGradient id="gg0" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffcb85" stop-opacity="0.45"/><stop offset="1" stop-color="#ffcb85" stop-opacity="0"/></radialGradient><radialGradient id="gg1" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffcb85" stop-opacity="0.45"/><stop offset="1" stop-color="#ffcb85" stop-opacity="0"/></radialGradient><radialGradient id="gg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffcb85" stop-opacity="0.45"/><stop offset="1" stop-color="#ffcb85" stop-opacity="0"/></radialGradient><radialGradient id="gg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffcb85" stop-opacity="0.45"/><stop offset="1" stop-color="#ffcb85" stop-opacity="0"/></radialGradient><radialGradient id="gg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffcb85" stop-opacity="0.45"/><stop offset="1" stop-color="#ffcb85" stop-opacity="0"/></radialGradient><radialGradient id="gg5" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffcb85" stop-opacity="0.45"/><stop offset="1" stop-color="#ffcb85" stop-opacity="0"/></radialGradient><radialGradient id="gg6" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffcb85" stop-opacity="0.45"/><stop offset="1" stop-color="#ffcb85" stop-opacity="0"/></radialGradient><radialGradient id="gg7" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffcb85" stop-opacity="0.45"/><stop offset="1" stop-color="#ffcb85" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="450" fill="url(#plate)"/>
+
+<path d="M110 150 Q400 250 690 150" fill="none" stroke="rgba(239,233,223,0.42)" stroke-width="2.5"/>
+<path d="M150 150 v22" stroke="rgba(239,233,223,0.42)" stroke-width="2"/>
+<ellipse cx="150" cy="192" rx="13" ry="20" fill="#ffe6c0" opacity="0.9"/>
+<circle cx="150" cy="192" r="42" fill="url(#gg0)"/><path d="M222 177 v22" stroke="rgba(239,233,223,0.42)" stroke-width="2"/>
+<ellipse cx="222" cy="219" rx="13" ry="20" fill="#ffe6c0" opacity="0.9"/>
+<circle cx="222" cy="219" r="42" fill="url(#gg1)"/><path d="M294 183 v22" stroke="rgba(239,233,223,0.42)" stroke-width="2"/>
+<ellipse cx="294" cy="225" rx="13" ry="20" fill="#ffe6c0" opacity="0.9"/>
+<circle cx="294" cy="225" r="42" fill="url(#gg2)"/><path d="M366 165 v22" stroke="rgba(239,233,223,0.42)" stroke-width="2"/>
+<ellipse cx="366" cy="207" rx="13" ry="20" fill="#ffe6c0" opacity="0.9"/>
+<circle cx="366" cy="207" r="42" fill="url(#gg3)"/><path d="M438 135 v22" stroke="rgba(239,233,223,0.42)" stroke-width="2"/>
+<ellipse cx="438" cy="177" rx="13" ry="20" fill="#ffe6c0" opacity="0.9"/>
+<circle cx="438" cy="177" r="42" fill="url(#gg4)"/><path d="M510 117 v22" stroke="rgba(239,233,223,0.42)" stroke-width="2"/>
+<ellipse cx="510" cy="159" rx="13" ry="20" fill="#ffe6c0" opacity="0.9"/>
+<circle cx="510" cy="159" r="42" fill="url(#gg5)"/><path d="M582 124 v22" stroke="rgba(239,233,223,0.42)" stroke-width="2"/>
+<ellipse cx="582" cy="166" rx="13" ry="20" fill="#ffe6c0" opacity="0.9"/>
+<circle cx="582" cy="166" r="42" fill="url(#gg6)"/><path d="M654 151 v22" stroke="rgba(239,233,223,0.42)" stroke-width="2"/>
+<ellipse cx="654" cy="193" rx="13" ry="20" fill="#ffe6c0" opacity="0.9"/>
+<circle cx="654" cy="193" r="42" fill="url(#gg7)"/>
+<text x="150" y="392" fill="rgba(239,233,223,0.42)" font-family="Georgia, serif" font-size="20">10 м / 100 LED / 8 режимов</text>
+</svg>

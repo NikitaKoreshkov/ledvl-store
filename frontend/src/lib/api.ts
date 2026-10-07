@@ -1,4 +1,7 @@
 import axios from 'axios'
+import demoAdapter from './demo-adapter'
+
+export const isDemo = process.env.NEXT_PUBLIC_DEMO === '1'
 
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001',
@@ -6,6 +9,11 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
 })
+
+// Демо-режим для превью без базы: запросы не уходят в сеть, данные лежат в lib/demo-data.ts
+if (isDemo) {
+  api.defaults.adapter = demoAdapter
+}
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('admin_token')
@@ -20,4 +28,3 @@ api.interceptors.request.use((config) => {
 })
 
 export default api
-

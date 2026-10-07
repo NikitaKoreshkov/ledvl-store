@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<defs>
+<linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#15161a"/><stop offset="1" stop-color="#0c0d10"/>
+</linearGradient>
+<radialGradient id="fg" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffd9a1" stop-opacity="0.45"/>
+<stop offset="0.55" stop-color="#ffb765" stop-opacity="0.1575"/>
+<stop offset="1" stop-color="#ffb765" stop-opacity="0"/>
+</radialGradient>
+<circle cx="330" cy="250" r="250" fill="url(#fg)"/>
+</defs>
+<rect width="800" height="450" fill="url(#plate)"/>
+
+<rect x="470" y="110" width="180" height="120" rx="6" fill="#1b2a3a" stroke="rgba(239,233,223,0.42)"/>
+<g stroke="rgba(120,170,220,0.5)" stroke-width="1.4">
+<line x1="510" y1="110" x2="510" y2="230"/><line x1="550" y1="110" x2="550" y2="230"/><line x1="590" y1="110" x2="590" y2="230"/><line x1="470" y1="150" x2="650" y2="150"/><line x1="470" y1="190" x2="650" y2="190"/>
+</g>
+<rect x="200" y="150" width="230" height="110" rx="12" fill="#20232a" stroke="rgba(239,233,223,0.42)"/>
+<rect x="222" y="172" width="186" height="66" rx="6" fill="#ffe7c4" opacity="0.85"/>
+<path d="M200 260 L430 260 L520 392 L110 392 Z" fill="url(#fg)"/>
+<circle cx="452" cy="288" r="14" fill="#2c3038" stroke="rgba(239,233,223,0.42)"/>
+<path d="M300 150 v-34 M250 300 v58 M350 300 v58" stroke="rgba(239,233,223,0.42)" stroke-width="3"/>
+<text x="110" y="424" fill="rgba(239,233,223,0.42)" font-family="Georgia, serif" font-size="20">200 Вт / датчик движения</text>
+</svg>

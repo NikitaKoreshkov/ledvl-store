@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+const HERO_IMAGE = process.env.NEXT_PUBLIC_HERO_IMAGE || '/images/hero.svg'
 
 export default function Hero() {
-  const heroImage = `${API_URL}/uploads/images/3.jpg`
+  const heroImage = HERO_IMAGE
 
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">

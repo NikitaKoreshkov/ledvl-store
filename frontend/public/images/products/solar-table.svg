@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<defs>
+<linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#15161a"/><stop offset="1" stop-color="#0c0d10"/>
+</linearGradient>
+<radialGradient id="tg" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffd9a1" stop-opacity="0.5"/>
+<stop offset="0.55" stop-color="#ffb765" stop-opacity="0.175"/>
+<stop offset="1" stop-color="#ffb765" stop-opacity="0"/>
+</radialGradient>
+<circle cx="400" cy="210" r="190" fill="url(#tg)"/>
+</defs>
+<rect width="800" height="450" fill="url(#plate)"/>
+
+<path d="M330 120 h140 l-18 118 h-104 z" fill="#20232a" stroke="rgba(239,233,223,0.42)"/>
+<path d="M342 138 h116 l-12 84 h-92 z" fill="#ffe7c4" opacity="0.8"/>
+<circle cx="400" cy="180" r="150" fill="url(#tg)"/>
+<rect x="356" y="238" width="88" height="12" rx="6" fill="#2c3038"/>
+<path d="M400 250 v58" stroke="rgba(239,233,223,0.42)" stroke-width="4"/>
+<ellipse cx="400" cy="318" rx="86" ry="16" fill="#22242a" stroke="rgba(239,233,223,0.42)"/>
+<rect x="368" y="336" width="64" height="10" rx="5" fill="#1b2a3a" stroke="rgba(239,233,223,0.42)"/>
+<text x="252" y="404" fill="rgba(239,233,223,0.42)" font-family="Georgia, serif" font-size="20">18 Вт / сенсор / 15 м²</text>
+</svg>

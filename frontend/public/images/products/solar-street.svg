@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<defs>
+<linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#15161a"/><stop offset="1" stop-color="#0c0d10"/>
+</linearGradient>
+<radialGradient id="sg" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffd9a1" stop-opacity="0.5"/>
+<stop offset="0.55" stop-color="#ffb765" stop-opacity="0.175"/>
+<stop offset="1" stop-color="#ffb765" stop-opacity="0"/>
+</radialGradient>
+<circle cx="400" cy="250" r="250" fill="url(#sg)"/>
+</defs>
+<rect width="800" height="450" fill="url(#plate)"/>
+
+<rect x="300" y="96" width="200" height="26" rx="4" fill="#1b2a3a" stroke="rgba(239,233,223,0.42)"/>
+<g stroke="rgba(120,170,220,0.5)" stroke-width="1.4">
+<line x1="330" y1="96" x2="330" y2="122"/><line x1="360" y1="96" x2="360" y2="122"/><line x1="390" y1="96" x2="390" y2="122"/><line x1="420" y1="96" x2="420" y2="122"/><line x1="450" y1="96" x2="450" y2="122"/><line x1="480" y1="96" x2="480" y2="122"/>
+</g>
+<rect x="286" y="130" width="228" height="72" rx="10" fill="#20232a" stroke="rgba(239,233,223,0.42)"/>
+<g fill="#ffe7c4">
+<circle cx="306" cy="152" r="7"/><circle cx="342" cy="152" r="7"/><circle cx="378" cy="152" r="7"/><circle cx="414" cy="152" r="7"/><circle cx="450" cy="152" r="7"/><circle cx="486" cy="152" r="7"/><circle cx="306" cy="182" r="7"/><circle cx="342" cy="182" r="7"/><circle cx="378" cy="182" r="7"/><circle cx="414" cy="182" r="7"/><circle cx="450" cy="182" r="7"/><circle cx="486" cy="182" r="7"/>
+</g>
+<path d="M286 202 L514 202 L600 366 L200 366 Z" fill="url(#sg)" opacity="0.85"/>
+<rect x="392" y="202" width="16" height="150" fill="#22242a"/>
+<text x="200" y="404" fill="rgba(239,233,223,0.42)" font-family="Georgia, serif" font-size="20">100 Вт / LiFePO4 / датчик света</text>
+</svg>
