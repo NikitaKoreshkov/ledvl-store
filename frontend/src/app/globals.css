@@ -10,6 +10,9 @@
   body {
     @apply bg-background-main text-text-primary;
     line-height: 1.6;
+    /* Появления секций сдвигают блоки по x до входа во вьюпорт — clip режет
+       этот хвост без скролла по горизонтали (overflow-x: hidden ломал sticky) */
+    overflow-x: clip;
   }
 
   h1, h2, h3, h4, h5, h6 {

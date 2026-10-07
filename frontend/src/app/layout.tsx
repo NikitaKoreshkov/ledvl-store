@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display, Montserrat } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
@@ -21,6 +21,13 @@ const montserrat = Montserrat({
   weight: ['100', '200', '300', '400', '500', '600'],
   variable: '--font-montserrat',
 })
+
+// Без этого мета браузер разворачивает страницу на 980px и телефон показывает
+// обрезанный первый экран
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   title: 'Led VL — Премиальные осветительные приборы',

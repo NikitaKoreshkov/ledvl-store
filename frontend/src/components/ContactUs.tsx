@@ -37,7 +37,7 @@ export default function ContactUs() {
   }
 
   return (
-    <section id="contacts" className="py-24 bg-background-main">
+    <section id="contacts" className="py-24 bg-background-main relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
           {/* Левая колонка - Контакты */}
