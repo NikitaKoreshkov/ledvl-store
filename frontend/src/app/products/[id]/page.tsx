@@ -7,40 +7,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import api from '@/lib/api'
 import { useCart } from '@/store/cart'
-
-interface Product {
-  id: string
-  name: string
-  article: string | null
-  base_price: number
-  wholesale_price: number | null
-  color: string | null
-  is_available: boolean
-  stock_count: number
-  vendor_model: string | null
-  description: string | null
-  specs: Record<string, any> | null
-  dims: Record<string, any> | null
-  images: Array<{ url: string; width?: number; height?: number; size?: string }> | null
-  category: {
-    id: string
-    name: string
-  } | null
-  price_list_entries?: Array<{
-    stock_pack_qty: number | null
-    boxes_qty: number | null
-    price: number
-  }>
-  filter_values?: Array<{
-    id: string
-    value: string
-    display_name: string | null
-    filter: {
-      id: string
-      name: string
-    }
-  }>
-}
+import type { Product } from '@/lib/types'
 
 export default function ProductPage() {
   const params = useParams()
@@ -63,7 +30,6 @@ export default function ProductPage() {
   const loadProduct = async () => {
     try {
       const response = await api.get(`/api/v1/products/${productId}`)
-      console.log('Loaded product with images:', response.data.images)
       setProduct(response.data)
     } catch (error) {
       console.error('Failed to load product:', error)

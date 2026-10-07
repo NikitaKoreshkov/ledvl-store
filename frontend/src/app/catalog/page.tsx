@@ -1,43 +1,14 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import CatalogFilters from '@/components/CatalogFilters'
 import ProductCard from '@/components/ProductCard'
 import { motion, AnimatePresence } from 'framer-motion'
 import api from '@/lib/api'
+import type { Category, Product } from '@/lib/types'
 
-interface Product {
-  id: string
-  name: string
-  article: string | null
-  base_price: number
-  wholesale_price: number | null
-  color: string | null
-  is_available: boolean
-  stock_count: number
-  vendor_model: string | null
-  specs: Record<string, any> | null
-  dims: Record<string, any> | null
-  images: Array<{ url: string }> | null
-  category: {
-    id: string
-    name: string
-  } | null
-  price_list_entries?: Array<{
-    stock_pack_qty: number | null
-    boxes_qty: number | null
-    price: number
-  }>
-}
-
-interface Category {
-  id: string
-  name: string
-  slug: string
-}
-
-export default function CatalogPage() {
+function CatalogView() {
   const searchParams = useSearchParams()
   const categoryParam = searchParams.get('category')
   
@@ -378,5 +349,20 @@ export default function CatalogPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+// useSearchParams на статической странице без границы Suspense ломает пререндер в Next 14
+export default function CatalogPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="pt-24 pb-20 min-h-screen bg-background-main flex items-center justify-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-text-primary" />
+        </div>
+      }
+    >
+      <CatalogView />
+    </Suspense>
   )
 }

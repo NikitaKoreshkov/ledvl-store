@@ -152,7 +152,6 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
       images: images.length > 0 ? images : null,
     }
     
-    console.log('Saving product with images:', productToSave.images)
     onSave(productToSave)
   }
 
@@ -167,9 +166,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
         formData.append('images', file)
       })
 
-      console.log('Uploading images...', files.length)
       const response = await api.post('/api/v1/upload/images', formData)
-      console.log('Upload response:', response.data)
       
       if (!response.data || !response.data.files) {
         throw new Error('Invalid response from server')
@@ -181,7 +178,6 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
         url: `${apiUrl}${file.path}`,
       }))
 
-      console.log('New images:', newImages)
 
       if (isMain) {
         // Если это основное изображение, добавляем в начало (заменяем существующее основное)
@@ -536,7 +532,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
           ))}
           {technicalSpecs.length === 0 && (
             <p className="text-sm text-gray-500 text-center py-4">
-              Нет добавленных параметров. Нажмите "Добавить параметр" для создания.
+              Нет добавленных параметров. Нажмите «Добавить параметр» для создания.
             </p>
           )}
         </div>
@@ -555,7 +551,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
           rows={4}
         />
         <p className="text-sm text-gray-500 mt-2">
-          Укажите информацию о гарантии товара. Она будет отображаться на странице товара во вкладке "Гарантия".
+          Укажите информацию о гарантии товара. Она будет отображаться на странице товара во вкладке «Гарантия».
         </p>
       </div>
 

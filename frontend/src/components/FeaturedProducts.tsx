@@ -5,30 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import ProductCard from './ProductCard'
 import api from '@/lib/api'
-
-interface Product {
-  id: string
-  name: string
-  article: string | null
-  base_price: number
-  wholesale_price: number | null
-  color: string | null
-  is_available: boolean
-  stock_count: number
-  vendor_model: string | null
-  specs: Record<string, any> | null
-  dims: Record<string, any> | null
-  images: Array<{ url: string }> | null
-  category: {
-    id: string
-    name: string
-  } | null
-  price_list_entries?: Array<{
-    stock_pack_qty: number | null
-    boxes_qty: number | null
-    price: number
-  }>
-}
+import type { Product } from '@/lib/types'
 
 export default function FeaturedProducts() {
   const [products, setProducts] = useState<Product[]>([])

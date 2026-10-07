@@ -98,15 +98,12 @@ export default function AdminFilters() {
 
   const handleAddValue = async (filterId: string, value: Partial<FilterValue>) => {
     try {
-      console.log('Adding value to filter:', filterId, 'value:', value)
       const response = await api.post(`/api/v1/filters/${filterId}/values`, value)
-      console.log('Response from server:', response.data)
       await loadFilters()
       // Обновляем editingFilter, чтобы компонент получил актуальные данные
       if (editingFilter?.id === filterId) {
         const updatedFilters = await api.get('/api/v1/filters')
         const updatedFilter = updatedFilters.data.find((f: Filter) => f.id === filterId)
-        console.log('Updated filter after adding value:', updatedFilter)
         if (updatedFilter) {
           setEditingFilter(updatedFilter)
         }
@@ -229,7 +226,7 @@ export default function AdminFilters() {
                   </div>
                 ))
               ) : (
-                <p className="text-sm text-text-muted">Нет значений. Нажмите "Редактировать" для добавления.</p>
+                <p className="text-sm text-text-muted">Нет значений. Нажмите «Редактировать» для добавления.</p>
               )}
             </div>
           )}
@@ -331,7 +328,7 @@ function FilterForm({ filter, categories, onSave, onCancel, onAddValue, onUpdate
 
         {type === 'text' && (
           <div className="border-t pt-4 mt-4">
-            <TextFilterSettings filter={filter} />
+            <TextFilterSettings />
           </div>
         )}
 
@@ -349,24 +346,6 @@ function FilterForm({ filter, categories, onSave, onCancel, onAddValue, onUpdate
       </div>
     </div>
   )
-}
-
-function FilterValuesManager({ filter, onAddValue, onUpdateValue, onDeleteValue }: {
-  filter: Filter
-  onAddValue: (value: Partial<FilterValue>) => void
-  onUpdateValue: (valueId: string, value: Partial<FilterValue>) => void
-  onDeleteValue: (valueId: string) => void
-}) {
-  if (filter.type === 'range') {
-    return <RangeFilterSettings filter={filter} onAddValue={onAddValue} onUpdateValue={onUpdateValue} onDeleteValue={onDeleteValue} />
-  }
-  
-  if (filter.type === 'text') {
-    return <TextFilterSettings filter={filter} />
-  }
-
-  // Не должно быть вызвано, так как теперь настройки встроены в FilterForm
-  return null
 }
 
 function CheckboxValuesSettings({ filter, onAddValue, onDeleteValue }: {
@@ -541,15 +520,11 @@ function RangeFilterSettings({ filter, onAddValue, onUpdateValue, onDeleteValue 
       max_value: maxValue !== '' ? Number(maxValue) : null,
     }
 
-    console.log('Saving range data:', rangeData)
-    console.log('minValue:', minValue, 'maxValue:', maxValue)
 
     const currentRange = filter.values?.find(v => v.min_value !== null || v.max_value !== null)
     if (currentRange && currentRange.id) {
-      console.log('Updating existing range:', currentRange.id)
       onUpdateValue(currentRange.id, rangeData)
     } else {
-      console.log('Adding new range')
       onAddValue(rangeData)
     }
   }
@@ -617,7 +592,7 @@ function RangeFilterSettings({ filter, onAddValue, onUpdateValue, onDeleteValue 
   )
 }
 
-function TextFilterSettings({ filter }: { filter: Filter }) {
+function TextFilterSettings() {
   return (
     <div className="space-y-3">
       <h5 className="font-semibold text-sm">Настройки текстового поиска:</h5>
