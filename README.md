@@ -1,4 +1,34 @@
-# LEDVL: lighting-equipment store on Next.js and NestJS
+<div align="center">
+
+# LEDVL — lighting-equipment store
+
+**A supplier's Excel price list turned into a filterable catalogue on Next.js and NestJS, with MinIO for images and a demo build that needs no backend at all.**
+Street, industrial, office, low-voltage, trade and CRI97 fixtures; a filter engine
+built from the loaded price list; cart, admin panel and an Excel ingestion pipeline.
+
+**Demo:** [ledvl-storefront.vercel.app](https://ledvl-storefront.vercel.app) (`NEXT_PUBLIC_DEMO=1`)
+
+![Next.js](https://img.shields.io/badge/next.js-14.2-black?logo=next.js&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-11-e0234e?logo=nestjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgreSQL-15%2C%20TypeORM-336791?logo=postgresql&logoColor=white)
+![MinIO](https://img.shields.io/badge/storage-MinIO%20(S3)-c25f2e)
+![Docker](https://img.shields.io/badge/docker--compose-full%20stack-2496ED?logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/license-all%20rights%20reserved-red)
+
+</div>
+
+## The problem
+
+A lighting supplier's real database is a spreadsheet: barcodes, pack sizes, box
+counts, tariffs. The catalogue has to mirror it, because an electrician searches by
+article number and checks the pack quantity before ordering — and a shop that shows
+a fake "from 1 500 ₽" next to a real 980 ₽ price loses the trade buyer instantly.
+
+The second constraint is distribution: the site has to run on one small server with
+no managed S3, and a reviewer has to be able to open it without deploying a backend.
+
+---
+
 
 **Demo:** https://ledvl-storefront.vercel.app — the frontend from this repository, built with `NEXT_PUBLIC_DEMO=1`. In that mode catalog, categories, filters and order creation are answered from `frontend/src/lib/demo-data.ts` through an axios adapter, so the site runs without the API and the database. The products there are written for the demo; the pages, the filter engine UI and the cart are the real code from `frontend/`.
 
@@ -17,6 +47,8 @@ Catalog of LED lighting for a Vladivostok supplier: street, industrial, office, 
     <td align="center"><img src=".github/assets/mobile.jpg" alt="Landing on a 390px viewport" width="300" /></td>
   </tr>
 </table>
+
+---
 
 ## Stack and size
 
